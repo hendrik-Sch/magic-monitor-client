@@ -20,8 +20,11 @@ function InterfaceListItem(props) {
     const [startRequestedState, setStartRequestedState] = useState(startRequested);
 
     useEffect(() => {
-        setStopRequestedState(false);
-        setStartRequestedState(false);
+        if (idle) {
+            setStartRequestedState(false);
+        } else {
+            setStopRequestedState(false);
+        }
     }, [item]);
 
     const handleClick = useCallback(() => {

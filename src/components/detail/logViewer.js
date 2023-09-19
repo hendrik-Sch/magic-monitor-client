@@ -18,7 +18,7 @@ const columns = [
         valueFormatter: (params) => moment(params.value).format('HH:mm:ss SSS')
     },
     {
-        field: 'TypID', headerName: 'Level', width: 100, type: 'number',
+        field: 'TypeID', headerName: 'Level', width: 100, type: 'number',
         valueFormatter: (params) => {
             if (!params.value) {
                 return "";
@@ -26,9 +26,9 @@ const columns = [
 
             switch (params.value) {
                 case 0:
-                    return;
+                    return "Unknown";
                 case 1:
-                    return;
+                    return "Trace";
                 case 2:
                     return "Debug";
                 case 3:

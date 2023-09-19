@@ -3,7 +3,7 @@ import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { CircularProgress, IconButton, useTheme } from '@mui/material';
 
 function LoadingIconButton(props, ref) {
-    const { loading, disbaled, children, ...others } = props;
+    const { loading, disabled, children, ...others } = props;
 
     const theme = useTheme();
     const timeOut = useRef();
@@ -27,7 +27,7 @@ function LoadingIconButton(props, ref) {
     return (
         <IconButton
             ref={ref}
-            disabled={loading || disbaled}
+            disabled={loading || disabled}
             {...others}>
             {isLoading &&
                 <CircularProgress
